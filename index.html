@@ -88,6 +88,22 @@
         }
         return color;
       }
+      function getRandomImage() {
+        var images = [
+          'https://cdn.wallpapersafari.com/98/60/amtOTo.jpg',
+          'https://c4.wallpaperflare.com/wallpaper/688/366/565/avengers-endgame-captain-america-marvel-cinematic-universe-hd-wallpaper-preview.jpg',
+          'https://images.hdqwalls.com/wallpapers/dr-strange-2020-42.jpg'
+          // Add more image URLs as needed
+        ];
+        var randomIndex = Math.floor(Math.random() * images.length);
+        return images[randomIndex];
+      }
+
+      window.addEventListener('load', function() {
+        var social = document.getElementsByTagName('social-media');
+        social.style.backgroundImage = "url('" + getRandomImage() + "')";
+        social.style.backgroundColor = getRandomColor();
+      });
 
       window.addEventListener('load', function() {
         var header = document.getElementById('header');
@@ -103,7 +119,7 @@
             <img src="https://scontent.fktm17-1.fna.fbcdn.net/v/t1.6435-9/76954525_925742791159555_7862822205317447680_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yCnEa_o4w80AX-5GPAk&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD5oja3ngU6S4S8UiGXnCGUG3EjmM3LXAMlahhxDWcn_g&oe=6483D4B1" alt="your name">
           </div>
           <div class="back">
-            <img src="https://scontent.fktm17-1.fna.fbcdn.net/v/t1.6435-9/76954525_925742791159555_7862822205317447680_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yCnEa_o4w80AX-5GPAk&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD5oja3ngU6S4S8UiGXnCGUG3EjmM3LXAMlahhxDWcn_g&oe=6483D4B1" alt="your name">
+            <img src="https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/256855217_1472563983144097_2847639342203986972_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=K-_FVujdviYAX-b1Lxg&_nc_oc=AQnZgpC80VCB3ZXziKKsQm7zIu4G51VshjVQZGbKf2pLzzSfomyo7HbNKkEPTOMKaw4&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD-4obwDSSGf3ecS5BvRn30gnQCGY42Phamyl2vN01rwA&oe=646BF6E2" alt="your name">
           </div>
         </div>
       </div>

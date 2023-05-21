@@ -1,141 +1,147 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Portfolio</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      #header {
-        background-color: #001c3d;
-        text-align: center;
-        padding: 20px;
-      }
-      #header .flip-container {
-        perspective: 1000px;
-        display: inline-block;
-        cursor: pointer;
-      }
-      #header .flipper {
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        position: relative;
-        width: 200px;
-        height: 250px;
-        margin: 0 auto;
-        transform-origin: center center;
-      }
-      #header .front,
-      #header .back {
-        backface-visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      #header .front {
-        z-index: 2;
-      }
-      #header .back {
-        transform: rotateY(180deg);
-      }
-      #header .flip-container:hover .flipper,
-      #header .flip-container.active .flipper {
-        transform: rotateY(180deg);
-      }
-      #header img {
-        border-radius: 5%;
-        width: 200px;
-        height: 250px;
-        object-fit: cover;
-        border: #ffffff 2px solid;
-      }
-      #social-media {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-      }
-      #social-media a {
-        display: inline-block;
-        margin-bottom: 10px;
-        padding: 10px;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 20px;
-        transition: all 0.2s ease-in-out;
-        background-color: #3b5998;
-        border-radius: 5px;
-        width: 200px;
-        text-align: center;
-      }
-      #social-media a:hover {
-        color: #f1f1f1;
-        background-color: #646161;
-      }
-    </style>
-    <script>
-      function flipImage() {
-        var flipContainer = document.getElementById("flip-container");
-        flipContainer.classList.toggle("active");
-      }
-      function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-      }
-      function getRandomImage() {
-        var images = [
-          'https://cdn.wallpapersafari.com/98/60/amtOTo.jpg',
-          'https://c4.wallpaperflare.com/wallpaper/688/366/565/avengers-endgame-captain-america-marvel-cinematic-universe-hd-wallpaper-preview.jpg',
-          'https://images.hdqwalls.com/wallpapers/dr-strange-2020-42.jpg'
-          // Add more image URLs as needed
-        ];
-        var randomIndex = Math.floor(Math.random() * images.length);
-        return images[randomIndex];
-      }
 
-      window.addEventListener('load', function() {
-        var social = document.getElementsByTagName('social-media');
-        social.style.backgroundImage = "url('" + getRandomImage() + "')";
-        social.style.backgroundColor = getRandomColor();
-      });
+<head>
+  <title>My Portfolio</title>
+  <style>
+    body {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
 
-      window.addEventListener('load', function() {
-        var header = document.getElementById('header');
-        header.style.backgroundColor = getRandomColor();
-      });
-    </script>
-  </head>
-  <body>
-    <div id="header">
-      <div class="flip-container" id="flip-container" onclick="flipImage()">
-        <div class="flipper">
-          <div class="front">
-            <img src="https://scontent.fktm17-1.fna.fbcdn.net/v/t1.6435-9/76954525_925742791159555_7862822205317447680_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yCnEa_o4w80AX-5GPAk&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD5oja3ngU6S4S8UiGXnCGUG3EjmM3LXAMlahhxDWcn_g&oe=6483D4B1" alt="your name">
-          </div>
-          <div class="back">
-            <img src="https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/256855217_1472563983144097_2847639342203986972_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=K-_FVujdviYAX-b1Lxg&_nc_oc=AQnZgpC80VCB3ZXziKKsQm7zIu4G51VshjVQZGbKf2pLzzSfomyo7HbNKkEPTOMKaw4&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD-4obwDSSGf3ecS5BvRn30gnQCGY42Phamyl2vN01rwA&oe=646BF6E2" alt="your name">
-          </div>
+    #header {
+      background-color: transparent;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #header .flip-container {
+      perspective: 1000px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    #header .flipper {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+      width: 200px;
+      height: 250px;
+      margin: 0 auto;
+      transform-origin: center center;
+    }
+
+    #header .front,
+    #header .back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #header .front {
+      z-index: 2;
+    }
+
+    #header .back {
+      transform: rotateY(180deg);
+    }
+
+    #header .flip-container:hover .flipper,
+    #header .flip-container.active .flipper {
+      transform: rotateY(180deg);
+    }
+
+    #header img {
+      border-radius: 5%;
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border: #ffffff 2px solid;
+    }
+
+    #social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    #social-media a {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      transition: all 0.2s ease-in-out;
+      background-color: #3b5998;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+    }
+
+    #social-media a:hover {
+      color: #f1f1f1;
+      background-color: #646161;
+    }
+  </style>
+  <script>
+    function flipImage() {
+      var flipContainer = document.getElementById("flip-container");
+      flipContainer.classList.toggle("active");
+    }
+    function getRandomImage() {
+      var images = [
+        'https://cdn.wallpapersafari.com/98/60/amtOTo.jpg',
+        'https://c4.wallpaperflare.com/wallpaper/688/366/565/avengers-endgame-captain-america-marvel-cinematic-universe-hd-wallpaper-preview.jpg',
+        'https://images.hdqwalls.com/wallpapers/dr-strange-2020-42.jpg'
+        // Add more image URLs as needed
+      ];
+      var randomIndex = Math.floor(Math.random() * images.length);
+      return images[randomIndex];
+    }
+
+    window.addEventListener('load', function () {
+      var body = document.body;
+      body.style.backgroundImage = "url('" + getRandomImage() + "')";
+      body.style.backgroundColor = getRandomColor();
+    });
+
+  </script>
+</head>
+
+<body>
+  <div id="header">
+    <div class="flip-container" id="flip-container" onclick="flipImage()">
+      <div class="flipper">
+        <div class="front">
+          <img
+            src="https://scontent.fktm17-1.fna.fbcdn.net/v/t1.6435-9/76954525_925742791159555_7862822205317447680_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yCnEa_o4w80AX-5GPAk&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD5oja3ngU6S4S8UiGXnCGUG3EjmM3LXAMlahhxDWcn_g&oe=6483D4B1"
+            alt="your name">
+        </div>
+        <div class="back">
+          <img
+            src="https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/256855217_1472563983144097_2847639342203986972_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=K-_FVujdviYAX-b1Lxg&_nc_oc=AQnZgpC80VCB3ZXziKKsQm7zIu4G51VshjVQZGbKf2pLzzSfomyo7HbNKkEPTOMKaw4&_nc_ht=scontent.fktm17-1.fna&oh=00_AfD-4obwDSSGf3ecS5BvRn30gnQCGY42Phamyl2vN01rwA&oe=646BF6E2"
+            alt="your name">
         </div>
       </div>
     </div>
-    <div id="social-media">
-      <a href="https://www.facebook.com/profile.php?id=100011715280047" onclick="openFacebookApp()">Facebook</a>
-      <a href="your-social-media-link-2">Instagram</a>
-      <a href="your-social-media-link-3">GitHub</a>
-      <a href="your-social-media-link-4">TikTok</a>
-    </div>
-    <script>
-      function openFacebookApp() {
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        var appScheme = isMobile ? 'fb://' : 'https://www.facebook.com/';
-        window.location.href = appScheme;
-      }
-    </script>
-  </body>
+  </div>
+  <div id="social-media">
+    <a href="https://www.facebook.com/profile.php?id=100011715280047" onclick="openFacebookApp()">Facebook</a>
+    <a href="your-social-media-link-2">Instagram</a>
+    <a href="your-social-media-link-3">GitHub</a>
+    <a href="your-social-media-link-4">TikTok</a>
+  </div>
+  <script>
+    function openFacebookApp() {
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      var appScheme = isMobile ? 'fb://' : 'https://www.facebook.com/';
+      window.location.href = appScheme;
+    }
+  </script>
+</body>
+
 </html>
